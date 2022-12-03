@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { NavigationComponent } from './core/navigation/navigation.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NavigationComponent } from './core/navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
+    AuthModule,
     AppRoutingModule
   ],
   providers: [],

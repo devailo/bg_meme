@@ -10,11 +10,11 @@
         </div>
     </div>
     <div class="buttons-user" *ngIf="!isLoggedIn">
-        <button class="button" routerLink="/auth/login">Login</button>
-        <button class="button" routerLink="/auth/register">Register</button>
+        <button class="button" routerLink="/login">Login</button>
+        <button class="button" routerLink="/register">Register</button>
     </div>
     <div class="buttons-user" *ngIf="isLoggedIn">
-        <button class="button" routerLink="/auth/profile">{{user?.firstName}}'s Profile</button>
-        <button class="button" routerLink="/auth/logout">Logout</button>
+        <button class="button" routerLink="/profile">{{user?.firstName}}'s Profile</button>
+        <button class="button" routerLink="/logout">Logout</button>
     </div>
 </section>
