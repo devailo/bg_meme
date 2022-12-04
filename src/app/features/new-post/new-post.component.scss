@@ -1,0 +1,97 @@
+/* new-theme */
+
+.new-post-border {
+    background-color: #f6f6f6;
+    width:40%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.new-post-border .input {
+    margin-bottom: 1em;
+    
+}
+
+.header-background {
+    background-color:  rgb(74, 74, 74);
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding: 1.5em;
+    padding-bottom: 0;
+    margin-bottom: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.post-name{
+    color: white;
+}
+
+.header-background span {
+    background-color: #f6f6f6;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+.title, .new-post-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-post-content {
+    min-height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.new-post-content textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.new-post-content label {
+    margin-bottom: 0.3em;
+}
+
+.new-post-title input {
+    width: 55%;
+    border-radius: 0.3em;
+    padding: 0.35em;
+}
+
+button+button {
+    margin-left: 1rem;
+}
+
+.new-post-buttons {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.new-post-buttons button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+    
+}
+
+.new-post-buttons button:hover {
+   background-color: red;
+}
+
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.input-error {
+    border-left-color: red;
+}

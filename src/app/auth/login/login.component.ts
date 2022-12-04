@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-
   email = 'email';
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {

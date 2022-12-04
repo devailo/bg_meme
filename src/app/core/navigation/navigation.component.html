@@ -1,20 +1,15 @@
 <section class="flex-container">
     <div>
-        <button id="home-btn" class="button" routerLink="/">Home</button>
+        <button id="home-btn" class="button" routerLink="/">Начало</button>
+        <button class="button" routerLink="/new-post">Качи ново меме</button>
     </div>
-        
-    <div class="buttons-browse">
-        <div class="browse">
-            <button class="button" routerLink="/user/list">User list</button>
-            <button class="button" routerLink="/post/list">Post list</button>
-        </div>
-    </div>
+ 
     <div class="buttons-user" *ngIf="!isLoggedIn">
-        <button class="button" routerLink="/login">Login</button>
-        <button class="button" routerLink="/register">Register</button>
+        <button class="button" routerLink="/login">Вход</button>
+        <button class="button" routerLink="/register">Регистрация</button>
     </div>
     <div class="buttons-user" *ngIf="isLoggedIn">
-        <button class="button" routerLink="/profile">{{user?.firstName}}'s Profile</button>
-        <button class="button" routerLink="/logout">Logout</button>
+        <button class="button" routerLink="/profile">Класическия {{user?.firstName}}</button>
+        <button class="button" routerLink="/logout">Изход</button>
     </div>
 </section>

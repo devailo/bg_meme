@@ -6,21 +6,18 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background: #ddd;
+    background-color: #f6f6f6;
 
 }
 
-#home-btn::before {
-    after: "";
 
-}
 
 #home-btn {}
 
 .buttons-user {}
 
 .button {
-    background-color: rgb(200, 176, 224);
+    background-color: rgb(98, 98, 98);
     border: none;
     color: rgb(255, 255, 255);
     padding: 15px 32px;
