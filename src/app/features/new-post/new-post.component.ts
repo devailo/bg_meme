@@ -10,6 +10,7 @@ export class NewPostComponent {
 
   @ViewChild('files', { static: true }) files!: ElementRef<HTMLInputElement>;
 
+
   constructor() { }
 
   newPostHandler(form: NgForm): void {

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './core/error/error.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { HomeComponent } from './features/home/home.component';
 import { NewPostComponent } from './features/new-post/new-post.component';
+import { ProfileComponent } from './features/profile/profile.component';
+import { AuthActivate } from './shared/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -13,28 +14,43 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },{
-    path: 'register',
-    component: RegisterComponent
+    path: 'new-post',
+    component: NewPostComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Ново Меме',
+      loginRequired: true
+    }
   },
   {
-    path: 'new-post',
-    component: NewPostComponent
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthActivate],
+    data: {
+      title: 'Профил',
+      loginRequired: true
+    }
   },
   {
     path: 'not-found',
     component: PageNotFoundComponent
   },
-    {
+  {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: '**',
     redirectTo: '/not-found'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

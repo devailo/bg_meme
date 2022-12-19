@@ -5,11 +5,11 @@
     </div>
  
     <div class="buttons-user" *ngIf="!isLoggedIn">
-        <button class="button" routerLink="/login">Вход</button>
-        <button class="button" routerLink="/register">Регистрация</button>
+        <button class="button" routerLink="/auth/login">Вход</button>
+        <button class="button" routerLink="/auth/register">Регистрация</button>
     </div>
     <div class="buttons-user" *ngIf="isLoggedIn">
-        <button class="button" routerLink="/profile">Класическия {{user?.firstName}}</button>
-        <button class="button" routerLink="/logout">Изход</button>
+        <button class="button" routerLink="/profile">Класическия {{user?.username}}</button>
+        <button class="button" routerLink="/auth/logout">Изход</button>
     </div>
 </section>

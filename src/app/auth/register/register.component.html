@@ -1,1 +1,45 @@
-<p>register works!</p>
+<form id="hardcode-login-page" #registerForm="ngForm" (ngSubmit)="registerHandler(registerForm)">
+    <div class="form-group">
+        <label for="username">Потребителско име: </label>
+        <input  id="username" type="text" name="username" #usernameInput="ngModel" ngModel username required>
+        <ng-container *ngIf="usernameInput.touched">
+            <div *ngIf="usernameInput.errors?.['required']">Потребителско име е задължително</div>
+        </ng-container>
+    </div>
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input  id="email" type="text" name="email" #emailInput="ngModel" ngModel email required>
+        <ng-container *ngIf="emailInput.touched">
+            <div *ngIf="emailInput.errors?.['required']">Email is required</div>
+            <div *ngIf="emailInput.errors?.['email']">Invalid Email</div>
+        </ng-container>
+    </div>
+    <div class="form-group">
+        <label for="password">Парола: </label>
+        <input  id="password" type="text" name="password" #passwordInput="ngModel" required ngModel [minlength]="5">
+        <div *ngIf="passwordInput.errors?.['appMinCount']">Password must be at least {{passwordInput.errors?.['appMinCount']}} symbols </div>
+        <ng-container *ngIf="passwordInput.touched">
+                <p class="error" *ngIf="passwordInput.errors?.['minlength']">Password must be at least 5 characters long</p>
+        </ng-container>
+    </div>
+    <div class="form-group">
+        <label for="password">Повторно парола: </label>
+        <input  id="password" type="text" name="repass" #repassInput="ngModel" required ngModel [minlength]="5">
+        <div *ngIf="repassInput.errors?.['appMinCount']">Password must be at least {{passwordInput.errors?.['appMinCount']}} symbols </div>
+        <ng-container *ngIf="repassInput.touched">
+                <p class="error" *ngIf="repassInput.errors?.['minlength']">Password must be at least 5 characters long</p>
+        </ng-container>
+    </div>
+    <div class="form-group">
+        <label for="birthDate">Дата на раждане: </label>
+        <input  id="birthDate" type="date" name="birthDate" #birthDateInput="ngModel" ngModel c required > 
+        <ng-container *ngIf="birthDateInput.touched">
+                <p class="error" *ngIf="birthDateInput.errors">Невалидна дата</p>
+        </ng-container>
+    </div>
+    <button class="button" [disabled]="registerForm.invalid">Регистрация</button>
+</form>
+
+<div id="hardcode-login-page">
+    {{registerForm.value | json}}
+</div>

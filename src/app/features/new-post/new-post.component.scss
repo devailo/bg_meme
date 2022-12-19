@@ -1,31 +1,27 @@
 /* new-theme */
 
-.new-post-border {
+.form-border {
     background-color: #f6f6f6;
-    width:40%;
+    width: 40%;
     margin: auto;
     margin-top: 2em;
     padding: 1em;
     border-radius: 1em;
 }
 
-.new-post-border .input {
+.form-border .input {
     margin-bottom: 1em;
-    
 }
 
 .header-background {
-    background-color:  rgb(74, 74, 74);
+    background-color: rgb(74, 74, 74);
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
     padding: 1.5em;
     padding-bottom: 0;
     margin-bottom: 1em;
     color: rgb(0, 0, 0);
-    font-weight: bold;
-}
-.post-name{
-    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header-background span {
@@ -36,36 +32,22 @@
     margin-top: 1em;
 }
 
-.title, .new-post-content {
-    display: flex;
-    flex-direction: column;
+.form-title label {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(57, 57, 57);
 }
 
-.new-post-content {
-    min-height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.new-post-content textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin: 0;
-}
-
-.new-post-content label {
-    margin-bottom: 0.3em;
-}
-
-.new-post-title input {
-    width: 55%;
+.form-title input {
+    width: 98%;
     border-radius: 0.3em;
-    padding: 0.35em;
+    border: 2px solid #ffffff;
+    padding: 0.2em;
+    margin-bottom: 0.3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 button+button {
-    margin-left: 1rem;
+    margin-left: 1em;
 }
 
 .new-post-buttons {
@@ -75,23 +57,38 @@ button+button {
 
 .new-post-buttons button {
     padding: 0.4em 1.5em;
-    border: 1px solid #333333;
+    background-color: white;
+    border: 1px solid white;
     border-radius: 0.3em;
-    
 }
 
-.new-post-buttons button:hover {
-   background-color: red;
+.new-post-buttons button.cancel:hover {
+    background-color:rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
 }
 
+.new-post-buttons button.publish:enabled {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+ }
+
+ .new-post-buttons button.publish:enabled:hover {
+    background-color:rgb(0, 172, 0);
+    color: white;
+    cursor: pointer;
+}
 
 p.error {
     text-align: left;
     border-radius: 0.3em;
     color: red;
-    padding-top: 0;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.input-error {
+.inputName-error {
     border-left-color: red;
 }
